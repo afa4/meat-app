@@ -11,6 +11,7 @@ export class ShoppingCartService {
   }
 
   clear() {
+    this.items = [];
   }
 
   addItem(item: MenuItem) {
@@ -23,7 +24,11 @@ export class ShoppingCartService {
   }
 
   removeItem(item: CartItem) {
-    this.items.splice(this.items.indexOf(item), 1);
+    if (item.quantity === 1) {
+      this.items.splice(this.items.indexOf(item), 1);
+    } else {
+      item.quantity--;
+    }
   }
 
   total(): number {

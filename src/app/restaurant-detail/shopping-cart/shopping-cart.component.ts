@@ -22,4 +22,12 @@ export class ShoppingCartComponent implements OnInit {
     return this.shoppingCartService.total();
   }
 
+  clear() {
+    this.shoppingCartService.clear();
+  }
+
+  removeItem(item: CartItem) {
+    this.shoppingCartService.removeItem(item);
+  }
+
 }
