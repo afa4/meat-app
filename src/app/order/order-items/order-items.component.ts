@@ -16,10 +16,6 @@ export class OrderItemsComponent implements OnInit {
   ngOnInit() {
   }
 
-  cartItems() {
-    return this.orderService.cartItems();
-  }
-
   removeCartItem(item: CartItem) {
     this.orderService.removeCartItem(item);
   }

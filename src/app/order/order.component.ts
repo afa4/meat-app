@@ -8,6 +8,8 @@ import {OrderService} from './order.service';
 })
 export class OrderComponent implements OnInit {
 
+  delivery = 8;
+
   paymentOptions: RadioOption[] = [
     new RadioOption('Dinheiro', 'MON'),
     new RadioOption('Crédito', 'CRE'),
