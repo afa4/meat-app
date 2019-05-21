@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ShoppingCartService} from '../restaurant-detail/shopping-cart/shopping-cart.service';
-import {CartItem} from '../restaurant-detail/shopping-cart/cart-item.model';
 import {RadioOption} from '../shared/radio/radio-option.model';
-import {visitValue} from '@angular/compiler/src/util';
+import {OrderService} from './order.service';
 
 @Component({
   selector: 'mt-order',
@@ -16,25 +14,18 @@ export class OrderComponent implements OnInit {
     new RadioOption('Débito', 'DEB'),
   ];
 
-  constructor(public shoppingCartService: ShoppingCartService) {
+  constructor(public orderService: OrderService) {
   }
 
   ngOnInit() {
   }
 
-  items() {
-    return this.shoppingCartService.items;
-  }
-
-  removeItem(item: CartItem) {
-    this.shoppingCartService.removeItem(item);
+  cartItems() {
+    return this.orderService.cartItems();
   }
 
   total() {
-    return this.shoppingCartService.total();
+    return this.orderService.cartTotal();
   }
 
-  addItem(item: CartItem) {
-    this.shoppingCartService.addItem(item.menuItem);
-  }
 }
