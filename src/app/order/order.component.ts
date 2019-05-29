@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RadioOption} from '../shared/radio/radio-option.model';
 import {OrderService} from './order.service';
+import {Order, OrderItem} from './order.model';
+import {CartItem} from '../restaurant-detail/shopping-cart/cart-item.model';
 
 @Component({
   selector: 'mt-order',
@@ -28,6 +30,16 @@ export class OrderComponent implements OnInit {
 
   total() {
     return this.orderService.cartTotal();
+  }
+
+  checkOrder(order: Order) {
+    order.items = this.cartItems()
+      .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id));
+    this.orderService.checkOrder(order).subscribe((orderId: String) => {
+      console.log(`Compra concluída: ${orderId}`);
+      this.orderService.clear();
+    });
+    console.log(order);
   }
 
 }

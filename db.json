@@ -370,5 +370,53 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "Address",
+      "number": "11",
+      "optional": "",
+      "paymentOption": "CRE",
+      "items": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        },
+        {
+          "quantity": 1,
+          "menuId": "bread"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "Rua barão de souza leão",
+      "number": "425",
+      "optional": "Sala 707",
+      "paymentOption": "MON",
+      "items": [
+        {
+          "quantity": 1,
+          "menuId": "chocpop"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "Rua Coronel Urbano Ribeiro de Sena",
+      "number": "2",
+      "optional": "",
+      "paymentOption": "MON",
+      "items": [
+        {
+          "quantity": 1,
+          "menuId": "espreso"
+        }
+      ],
+      "id": 3
+    }
+  ]
 }
